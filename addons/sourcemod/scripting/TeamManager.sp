@@ -103,7 +103,8 @@ public void InitWarmup()
 
 	if (g_cvDynamic.IntValue > 0)
 	{
-		int iMapSize = GetCurrentMapSize();
+		// Convert the map size fromn bytes to megabytes.
+		int iMapSize = (GetCurrentMapSize() / 1048576);
 		if (iMapSize < 1)
 			g_cvDynamic.IntValue = 0; // Invalid map size, disable dynamic warmup.
 		else
